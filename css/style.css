@@ -31,6 +31,7 @@ footer, header, hgroup, menu, nav, section {
 body {
 	line-height: 1;
 	font-family: "Segoe UI", 'Roboto', sans-serif;
+    height: 100vh;
 }
 ol, ul {
 	list-style: none;
@@ -52,51 +53,91 @@ table {
 /*     */
 
 .slide-container {
-    margin-top: 100px;
+    width: 60%;
+    height: 100%;
+    margin: 0 auto;
+    padding: 50px; 
 }
 
-.slide i {
-    color: red;
+.image-slide-container {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    
+}
+
+.slide-container i {
+    color: rgb(65, 61, 61);
+    z-index: 10;
+    font-size: 50px;
+    cursor: pointer;
     position: absolute;
-    z-index: 9999;
-    font-size: 30px;
-    cursor: pointer
-}
-
-.slide {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: gray;
     display: flex;
     justify-content: center;
-    position: relative;
+    align-items: center;
+}
+
+.slide-container i:hover {
+    background-color: rgb(138, 131, 131);
+}
+
+.image-slide-container .prev-button {
+    top: 350px;
+    left: 50px;
+}
+
+.image-slide-container .next-button {
+    top: 350px;
+    right: 50px
 }
 
 .img-container {
-    display: none;
     position: absolute;
+    width: 100%;
+    opacity: 0;
+    transition: 0.4s all ease;
+}
+
+.img-container.show {
+    opacity: 1;
+    transition: 0.4s all ease;
+}
+
+.img-container img {
+    width: 100%;
 }
 
 .img-container span {
+    width: 100%;
+    height: 50px;
     position: absolute;
-    top: 570px;
-    left: 600px;
+    bottom: 0px;
+    left: 0;
+    padding: 20px;
     color: white;
-    font-size: 13.6px
+    font-size: 13.6px;
+    background: #0000006e;
 }
 
-.change-points {
+.slide-order-container {
     display: flex;
     justify-content: center;
-    margin-top: 20px;
-    gap: 10px
+    gap: 10px;
 }
 
-.change-point {
+.slide-order {
     border-radius: 50%;
-    background-color: black;
+    background-color: rgb(126, 115, 115);
     width: 20px;
     height: 20px;
     cursor: pointer;
 }
 
-.img-container.active {
-    display: block;
+.slide-order.active {
+    background-color: rgb(65, 61, 61);
 }
+
